@@ -25,4 +25,8 @@ Route::post('pagination/fetch',[UserController::class,'fetch'])->name('user.fetc
 Route::prefix('products')->group(function(){
     Route::get('/',[ProductController::class,'index'])->name('product.index');
     Route::post('/store',[ProductController::class,'store'])->name('product.store');
+    Route::post('/update',[ProductController::class,'update'])->name('product.update');
+    Route::post('/delete',[ProductController::class,'delete'])->name('product.delete');
+    Route::get('/paginate-data',[ProductController::class,'pagination'])->name('product.pagination');
+    Route::get('/search',[ProductController::class,'search'])->name('product.search');
 });
