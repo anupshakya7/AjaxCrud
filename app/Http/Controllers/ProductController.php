@@ -79,7 +79,7 @@ class ProductController extends Controller
         $products = Product::where('name','like','%'.$request->search.'%')->orWhere('price','like','%'.$request->search.'%')->orderBy('id','desc')->paginate(5);
 
         if($products->count() >= 1){
-            return view('',compact('products'))->render();
+            return view('products.pagination',compact('products'))->render();
         }else{
             return response()->json([
                 'status'=>'nothing_found'
